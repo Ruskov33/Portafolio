@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ruskov</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&family=Inter&family=JetBrains+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topnav">
+  <nav>
+    <a href="#inicio">inicio</a>
+    <a href="#sobremi">sobre mí</a>
+    <a href="#proyectos">proyectos</a>
+    <a href="#contacto">contacto</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="panel hero" id="inicio">
+    <img class="hero-hands" src="Cosas/manos.png" alt="">
+    <div class="hero-body">
+      <div class="brand">
+        <img class="brand-logo" src="Cosas/milogo.png" alt="Logo de Ruskov">
+        <h1>Ruskov</h1>
+      </div>
+      <p class="hero-tag mono">// desarrollador — juegos &amp; web</p>
+      <a class="scroll-cue mono" href="#sobremi">bajá para ver más ↓</a>
+    </div>
+  </section>
+
+  <section class="panel" id="sobremi">
+    <div class="about-grid">
+      <div>
+        <h2>Sobre mí</h2>
+        <p class="lede">Soy un chico de 16 años, estudiante de programacion, amante de las boludeces y el cafe con mucha azucar.</p>
+        <p class="lede"> Hago proyectos (a veces) y estoy haciendo esta pagina para tener un lugar donde se pueda ver las cosas que voy haciendo.
+           Tengo muchisimos prototipos y quiero poco a poco empezar a completarlos.
+        </p>
+        <ul class="skills">
+          <li>Godot</li>
+          <li>HTML/CSS</li>
+        </ul>
+      </div>
+    <div class="photos">
+      <figure class="polaroid"><img class="photo" src="Cosas/Polaroids/2.jpeg" alt=""></figure>
+      <figure class="polaroid"><img class="photo" src="Cosas/Polaroids/3.jpeg" alt=""></figure>
+      <figure class="polaroid"><img class="photo" src="Cosas/Polaroids/4.jpeg" alt=""></figure>
+      <figure class="polaroid"><img class="photo" src="Cosas/Polaroids/1.jpeg" alt=""></figure>
+      <figure class="polaroid"><img class="photo" src="Cosas/Polaroids/5.jpeg" alt=""></figure>
+    </div>
+    </div>
+  </section>
+
+  <section class="panel" id="proyectos">
+    <h2>Proyectos</h2>
+
+    <div class="filters">
+      <input type="radio" name="filtro" id="f-todos" checked>
+      <label for="f-todos">Todos</label>
+      <input type="radio" name="filtro" id="f-juego">
+      <label for="f-juego">Juegos</label>
+      <input type="radio" name="filtro" id="f-web">
+      <label for="f-web">Web</label>
+      <input type="radio" name="filtro" id="f-otro">
+      <label for="f-otro">Otros</label>
+    </div>
+
+    <div class="projects-grid">
+
+
+      <article class="card" data-kind="web">
+       <div class="card-img"><img src="Cosas/LogosProyectos/FaroVitas.png" alt="FaroVitas"></div>
+        <div class="card-body">
+          <h3>FaroVitas</h3>
+          <p>Una version propia de Letterbox enfocada en el gusto del usuario sin reseñas ni opiniones externas. Aun no esta terminado...
+            Pero funciona correctamente! utiliza una api de TMDB y es de los proyectos de los que estoy mas orgulloso.</p>
+          <ul class="chips"><li>WEB</li><li>Html & Css</li><li>JavaScript</li></ul>
+          <a href="https://farovitas.netlify.app/" target="_blank" rel="noopener">Ver proyecto ↗</a>
+        </div>
+      </article>   
+
+      <article class="card" data-kind="otro">
+       <div class="card-img"><img src="Cosas/LogosProyectos/Nuestracantinaa.png" alt="Nuestra-Cantina"></div>
+        <div class="card-body">
+          <h3>Nuestra-Cantina</h3>
+          <p>Iniciativa escolar para transformar el sistema tradicional de vouchers en una plataforma completamente digitalizada. 
+           para gestionar los pedidos de manera más rápida, ordenada y eficiente.</p>
+          <ul class="chips"><li>OTROS</li><li>Sqlite3</li><li>Html & Css</li><li>Python</li><li>JavaScript</li></ul>
+          <a href="https://nuestra-cantina.netlify.app/" target="_blank" rel="noopener">Ver proyecto ↗</a>
+        </div>
+      </article>
+
+
+      <article class="card" data-kind="web">
+       <div class="card-img"><img src="Cosas/LogosProyectos/ColFi.png" alt="Col-Fi"></div>
+        <div class="card-body">
+          <h3>Col-fi</h3>
+          <p>Participe ayudando con la documentacion y haciendo el logo y la pagina web del proyecto, Chusmeenlo!</p>
+          <ul class="chips"><li>WEB</li><li>Html & Css</li><li>JavaScript</li></ul>
+          <a href="https://col-fi.netlify.app/" target="_blank" rel="noopener">Ver proyecto ↗</a>
+        </div>
+      </article>   
+      
+      <article class="card" data-kind="juego">
+       <div class="card-img"><img src="Cosas/LogosProyectos/CGOL.png" alt="CGOL"></div>
+        <div class="card-body">
+          <h3>Conway's Game of Life</h3>
+          <p>Sencilla recreacion del autómata celular de John Horton Conway, lo habia hecho unos años y me dio por subirlo</p>
+          <ul class="chips"><li>JUEGO</li><li>Gamemaker2</li><li>Html & Css</li></ul>
+          <a href="https://ruskov33.github.io/Conway-s-Game-of-Life/" target="_blank" rel="noopener">Ver proyecto ↗</a>
+        </div>
+      </article>   
+
+      <article class="card" data-kind="otro">
+        <div class="card-img"><img src="Cosas/LogosProyectos/focos.png" alt="Focos"></div>
+        <div class="card-body">
+          <h3>Focos</h3>
+          <p>Pequeño cuento que hice para el concurso de escritura del Instituto de profesorado Dr. Joaquin V Gonzales 2026
+            (si, peor seudonimo para ponerme no habia)
+          </p>
+          <ul class="chips"><li>OTRO</li><li>PDF?</li><li>nosequeponerjaja</li></ul>
+          <a href="Cosas/Focos.pdf" target="_blank" rel="noopener">Leer cuento ↗</a>
+        </div>
+      </article> 
+      
+      
+      <!--<article class="card" data-kind="web">
+        <div class="card-img"></div>
+        <div class="card-body">
+          <h3>NOMBRE</h3>
+          <p>DESCRIPCION.</p>
+          <ul class="CHIPS"><li>CHIP1</li><li>CHIP2</li></ul>
+          <a href="LINKDEPAGINA" target="_blank" rel="noopener">Ver proyecto ↗</a>
+        </div>
+      </article>-->
+
+
+    </div>
+  </section>
+
+  <!--CONTACTO-->
+  <section class="panel" id="contacto">
+    <h2>Contacto</h2>
+    <p class="lede">¿Querés comunicarte conmigo? Chusmea por cualquiera de estos medios.</p>
+    <div class="contact-list">
+      <a href="mailto:ruskv32@gmail.com"><span>Email</span><span class="mono">ruskv32@gmail.com</span></a>
+      <a href="https://github.com/Ruskov33" target="_blank" rel="noopener"><span>GitHub</span><span class="mono">Ruskov33</span></a>
+      <!--<a href="https://pinterest.io/" target="_blank" rel="noopener"><span>pinterest</span><span class="mono">ACORDATEDEHACERTELACUENTA</span></a>-->
+      <!--<a href="https://itch.io/" target="_blank" rel="noopener"><span>itch.io</span><span class="mono">ACORDATEDEHACERTELACUENTA</span></a>-->
+
+    </div>
+  </section>
+
+</main>
+
+</body>
+</html>
