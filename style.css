@@ -289,9 +289,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   .hero-hands { opacity: 0.25; max-width: 100%; }
 }
 
-/* para el celu */
 @media (max-width: 700px) {
-
   html, body {
     max-width: 100%;
     overflow-x: hidden;
@@ -301,6 +299,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 
   html { scroll-padding-top: 44px; }
 
+  .topnav {
     left: 0;
     right: 0;
     width: 100%;
