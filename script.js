@@ -14,8 +14,11 @@ for (const name of [...walkFrames, ...flyFrames, "kirby_idle", "kirby_falling"])
     new Image().src = `sprites/${name}.png`;
 }
 
-let x = window.innerWidth - SIZE;
-let y = window.innerHeight - SIZE;
+const viewW = () => document.documentElement.clientWidth;
+const viewH = () => document.documentElement.clientHeight;
+
+let x = viewW() - SIZE;
+let y = viewH() - SIZE;
 let vy = 0;
 let facing = -1;
 let onGround = true;
@@ -53,13 +56,53 @@ window.addEventListener("blur", () => {
     flying = false;
 });
 
+let currentSprite = "";
+
+let dragging = false;
+let grabX = 0;
+let grabY = 0;
+let lastPX = 0;
+
+kirby.addEventListener("pointerdown", (e) => {
+    dragging = true;
+    grabX = e.clientX - x;
+    grabY = e.clientY - y;
+    lastPX = e.clientX;
+    vy = 0;
+    flying = false;
+    kirby.setPointerCapture(e.pointerId);
+    e.preventDefault();
+});
+
+kirby.addEventListener("pointermove", (e) => {
+    if (!dragging) return;
+    x = Math.max(0, Math.min(e.clientX - grabX, viewW() - SIZE));
+    y = Math.max(0, Math.min(e.clientY - grabY, viewH() - SIZE));
+    if (Math.abs(e.clientX - lastPX) > 2) {
+        facing = e.clientX > lastPX ? 1 : -1;
+        lastPX = e.clientX;
+    }
+});
+
+const drop = () => { dragging = false; };
+kirby.addEventListener("pointerup", drop);
+kirby.addEventListener("pointercancel", drop);
+kirby.addEventListener("contextmenu", (e) => e.preventDefault());
+
 function setSprite(name) {
+    if (name === currentSprite) return;
+    currentSprite = name;
     sprite.src = `sprites/${name}.png`;
 }
 
 function update(dt) {
-    const floor = window.innerHeight - SIZE;
-    const maxX = window.innerWidth - SIZE;
+    if (dragging) {
+        setSprite("kirby_falling");
+        return;
+    }
+
+    const floor = viewH() - SIZE;
+    const maxX = viewW() - SIZE;
 
     let direction = 0;
     if (keys.a) direction = -1;
@@ -113,8 +156,7 @@ function loop(now) {
 
     update(dt);
 
-    kirby.style.left = `${x}px`;
-    kirby.style.top = `${y}px`;
+    kirby.style.transform = `translate3d(${x}px, ${y}px, 0)`;
     sprite.style.transform = `scaleX(${facing})`;
 
     requestAnimationFrame(loop);

@@ -296,8 +296,11 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 #kirby {
     position: fixed;
-    left: 20px;
+    left: 0;
     top: 0;
+    will-change: transform;
+    -webkit-touch-callout: none;
+    user-select: none;
     width: 64px;
     height: 64px;
     cursor: pointer;
