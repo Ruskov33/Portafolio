@@ -289,69 +289,6 @@ ul { margin: 0; padding: 0; list-style: none; }
   .hero-hands { opacity: 0.25; max-width: 100%; }
 }
 
-@media (max-width: 700px) {
-  html, body {
-    max-width: 100%;
-    overflow-x: hidden;
-    overscroll-behavior-x: none;
-    touch-action: pan-y pinch-zoom;
-  }
-
-  html { scroll-padding-top: 44px; }
-
-  .topnav {
-    left: 0;
-    right: 0;
-    width: 100%;
-    padding: 8px 12px;
-    text-align: center;
-  }
-  .topnav nav {
-    justify-content: center;
-    gap: 4px 18px;
-    font-size: 14px;
-  }
-
-  .panel { padding: 44px 20px 8px; }
-  .panel h2 { font-size: clamp(36px, 12vw, 56px); margin-bottom: 8px; }
-
-  .hero { min-height: 100svh; }
-  .hero-hands { opacity: 0.25; max-width: 100%; }
-
-  #sobremi {
-    min-height: 100svh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 52px 20px 12px;
-  }
-  .about-grid { gap: 14px; }
-  #sobremi .lede { font-size: 14px; line-height: 1.45; margin: 0 0 8px; }
-  .skills { margin-top: 10px; }
-  .skills li { font-size: 11px; padding: 3px 10px; }
-
-  .photos {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-    gap: 14px 18px;
-    padding: 6px 0 10px;
-  }
-  .photos .polaroid:nth-child(n) {
-    width: min(34vw, 13svh);
-    padding: 5px 5px 14px;
-    box-shadow: 3px 3px 0 var(--ink);
-  }
-  .photos .polaroid:nth-child(5) { display: none; }
-
-  .filters { flex-wrap: wrap; }
-
-  .contact-list a { flex-wrap: wrap; }
-  .contact-list .mono { overflow-wrap: anywhere; }
-}
-
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   * { transition: none !important; }
